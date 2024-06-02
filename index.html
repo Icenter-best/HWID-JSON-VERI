@@ -1,0 +1,38 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>JSON Data Demo</title>  
+    <script>  
+        // 预定义的JSON数据  
+        const data = {  
+            "users": [  
+                { "id": 1, "name": "Alice", "age": 30 },  
+                { "id": 2, "name": "Bob", "age": 25 },  
+                { "id": 3, "name": "Charlie", "age": 35 }  
+            ],  
+            "products": [  
+                { "id": 1, "name": "Product 1", "price": 99.99 },  
+                { "id": 2, "name": "Product 2", "price": 199.99 },  
+                { "id": 3, "name": "Product 3", "price": 149.99 }  
+            ]  
+        };  
+  
+        // 根据key返回对应的JSON数据  
+        function getJsonData(key) {  
+            return JSON.stringify(data[key], null, 2);  
+        }  
+  
+        // 当页面加载完成后，调用函数并显示数据  
+        window.onload = function() {  
+            // 示例：获取users数据并显示在页面上  
+            document.getElementById('json-output').textContent = getJsonData('users');  
+        };  
+    </script>  
+</head>  
+<body>  
+    <h1>JSON Data Demo</h1>  
+    <pre id="json-output"></pre> <!-- 显示JSON数据的容器 -->  
+</body>  
+</html>
